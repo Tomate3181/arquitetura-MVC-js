@@ -140,3 +140,44 @@ body {
   font-weight: bold;
   white-space: nowrap; /* Evita que o preço quebre a linha */
 }
+
+/* --- Estilos para o Card do Produto --- */
+
+#lista-produtos li {
+    /* Ajustes para alinhar os novos elementos */
+    align-items: center; /* Garante que tudo fique alinhado verticalmente */
+}
+
+.produto-info {
+    flex-grow: 1; /* Faz com que o nome do produto ocupe o espaço disponível */
+}
+
+.produto-acao {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre o preço e o botão */
+}
+
+
+/* --- Estilo do Novo Botão de Remover --- */
+
+.botao-remover {
+  background-color: #e06c75; /* Um tom de vermelho do tema dark */
+  color: #1a1d21;
+  border: none;
+  border-radius: 50%; /* Deixa o botão redondo */
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.botao-remover:hover {
+  background-color: #d85d69;
+  transform: scale(1.1); /* Efeito de crescimento ao passar o mouse */
+}
