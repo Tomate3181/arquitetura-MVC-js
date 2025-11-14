@@ -1,107 +1,142 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 :root {
-  --primary-color: #007bff; /* Azul vibrante para botões e destaques */
-  --secondary-color: #f8f9fa; /* Fundo claro para a área principal */
-  --background-color: #e9ecef; /* Cor de fundo geral, um cinza claro */
-  --text-color: #333; /* Cor do texto principal */
-  --border-color: #ccc; /* Cor das bordas */
-  --success-color: #28a745; /* Verde para ações de sucesso */
-  --danger-color: #dc3545; /* Vermelho para alertas ou botões de exclusão */
+  /* Paleta de Cores - Tema Dark */
+  --background-dark: #1a1d21; /* Fundo principal, quase preto */
+  --background-panel: #282c34; /* Fundo do painel lateral e dos cards */
+  --text-primary: #e6e6e6; /* Texto principal, branco suave */
+  --text-secondary: #9a9a9a; /* Texto secundário, para placeholders */
+  --border-color: #3a3f48; /* Cor das bordas */
+  --accent-color: #61afef; /* Azul para destaques e preços */
+  --success-color: #98c379; /* Verde para o botão de sucesso */
+  --success-hover: #a6d087;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--background-dark);
+  color: var(--text-primary);
   margin: 0;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
+  overflow-x: hidden; /* Evita a barra de rolagem horizontal */
 }
 
+/* --- Painel Fixo do Formulário (Esquerda) --- */
 #form-produtos {
-  background-color: var(--secondary-color);
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  margin-right: 20px;
+  position: fixed; /* Deixa o painel fixo na tela */
+  top: 0;
+  left: 0;
+  width: 400px; /* Largura do painel */
+  height: 100vh; /* Ocupa 100% da altura da tela */
+  background-color: var(--background-panel);
+  border-right: 1px solid var(--border-color);
+  padding: 30px 40px;
+
+  /* Centraliza o conteúdo do formulário verticalmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #form-produtos h2 {
   text-align: center;
-  color: var(--primary-color);
-  margin-bottom: 20px;
+  color: var(--accent-color);
+  margin-bottom: 30px;
+  font-weight: 500;
 }
 
 #form-produtos input[type="text"] {
-  width: calc(100% - 20px);
-  padding: 12px;
-  margin-bottom: 15px;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  background-color: #3a3f48;
+  color: var(--text-primary);
+  border-radius: 5px;
   font-size: 16px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#form-produtos input[type="text"]::placeholder {
+  color: var(--text-secondary);
 }
 
 #form-produtos input[type="text"]:focus {
   outline: none;
-  border-color: var(--primary-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(97, 175, 239, 0.2);
 }
 
 #botao-submit {
   width: 100%;
   padding: 15px;
   background-color: var(--success-color);
-  color: white;
+  color: #1a1d21;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
   text-transform: uppercase;
+  margin-top: 10px;
 }
 
 #botao-submit:hover {
-  background-color: #218838;
+  background-color: var(--success-hover);
+}
+
+/* --- Área Principal com a Lista (Direita) --- */
+#area-principal {
+  margin-left: 400px; /* IMPORTANTE: Mesma largura do formulário para não ficar embaixo dele */
+  padding: 40px;
+}
+
+#area-principal h1 {
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 10px;
+  margin-top: 0;
 }
 
 #lista-produtos {
   list-style-type: none;
   padding: 0;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
+  display: grid; /* Layout em grid para os cards */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 #lista-produtos li {
-  padding: 15px 20px;
-  border-bottom: 1px solid var(--border-color);
+  background-color: var(--background-panel);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-#lista-produtos li:last-child {
-  border-bottom: none;
+#lista-produtos li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 #lista-produtos li .produto-nome {
-  font-weight: bold;
+  font-weight: 500;
+  margin-right: 15px;
 }
 
 #lista-produtos li .produto-preco {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 12px;
+  background-color: var(--accent-color);
+  color: var(--background-dark);
+  padding: 5px 12px;
+  border-radius: 15px;
   font-weight: bold;
+  white-space: nowrap; /* Evita que o preço quebre a linha */
 }
