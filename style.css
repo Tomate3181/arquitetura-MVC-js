@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --primary-color: #007bff; /* Azul vibrante para botões e destaques */
+  --secondary-color: #f8f9fa; /* Fundo claro para a área principal */
+  --background-color: #e9ecef; /* Cor de fundo geral, um cinza claro */
+  --text-color: #333; /* Cor do texto principal */
+  --border-color: #ccc; /* Cor das bordas */
+  --success-color: #28a745; /* Verde para ações de sucesso */
+  --danger-color: #dc3545; /* Vermelho para alertas ou botões de exclusão */
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+#form-produtos {
+  background-color: var(--secondary-color);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-right: 20px;
+}
+
+#form-produtos h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+#form-produtos input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+#form-produtos input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+#botao-submit {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+}
+
+#botao-submit:hover {
+  background-color: #218838;
+}
+
+#lista-produtos {
+  list-style-type: none;
+  padding: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+#lista-produtos li {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+#lista-produtos li:last-child {
+  border-bottom: none;
+}
+
+#lista-produtos li .produto-nome {
+  font-weight: bold;
+}
+
+#lista-produtos li .produto-preco {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+}
