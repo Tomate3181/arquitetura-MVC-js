@@ -18,7 +18,7 @@ As três camadas são:
 
 É a camada de apresentação, ou seja, tudo aquilo que o usuário vê e com o qual ele interage. Geralmente, é o código HTML e CSS. A sua única função é exibir os dados que recebe e capturar as ações do usuário (como cliques e preenchimento de formulários).
 
-*   **Neste projeto:** A View é o arquivo `view.html`. Ele contém o formulário para o cadastro do produto e a lista onde os produtos cadastrados são exibidos.
+*   **Neste projeto:** A View é o arquivo `index.html`. Ele contém o formulário para o cadastro do produto e a lista onde os produtos cadastrados são exibidos.
 
 ### 3. Controller (Controlador)
 
@@ -33,3 +33,11 @@ As três camadas são:
 3.  O **Controller** pega os dados e os envia para o **Model**.
 4.  O **Model** salva o novo produto.
 5.  O **Controller** avisa a **View** que os dados mudaram, e a **View** se atualiza para exibir o novo produto.
+
+## Link da página
+
+https://tomate3181.github.io/arquitetura-MVC-js/
+
+## Desenvolvido por
+
+- Samuel Mioni
